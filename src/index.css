@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme{
+  --color-bg: 255 255 255;
+  --color-box: 255 255 255;
+  --box-border: 229 231 235;
+  --box-sd: 226 232 240 / 0.5;
+  --heading-1: 23 37 84;
+  --heading-2: 31 41 55;
+  --heading-3: 55 65 81;
+}
+
+html.dark {
+  --color-bg: 3 7 18;
+  --color-box: 17 24 39;
+  --box-border: 243 244 246 / 0.1;
+  --box-sd: transparent;
+  --heading-1: 255 255 255;
+  --heading-2: 243 244 246;
+  --heading-3: 209 213 219;
+}
