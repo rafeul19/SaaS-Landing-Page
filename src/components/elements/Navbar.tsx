@@ -1,8 +1,9 @@
 import { Container } from "../shared/Container";
 import logo from '../../assets/icon.svg'
 import { NavItem } from "../shared/NavItem";
+import { BtnLink } from "../shared/BtnLink"; // <-- Add this import
 
-const navItem = [
+const navItems = [ // <-- Rename to navItems
     { href: "#", text: "Home"},
     { href: "#services", text: "Services"},
     { href: "#about", text: "About Us"},
@@ -28,7 +29,7 @@ export const Navbar = () => {
 
             <div className="flex flex-col lg:flex-row w-full lg:justify-between lg:items-center 
             absolute top-full left-0 lg:static lg:top-0 bg-body lg:bg-transparent 
-            border-x border-x-box-border lg:border-x-0 lg:h-auto"
+            border-x border-x-box-border lg:border-x-0 lg:h-auto h-0 overflow-hidden"
             >
                 <ul className="boarder-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 
                         lg:pt-0 flex flex-col lg:flex-row gap-x-3 text-lg text-heading-2 w-full
@@ -38,6 +39,11 @@ export const Navbar = () => {
                         <NavItem href={item.href} text={item.text} key={key} />
                     ))}
                 </ul>
+                <div className="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 
+                                    border-b border-box-border lg:border-0 px-6 lg:px-0"
+                >
+                    <BtnLink text="Get Started" href="#cta" className="" />
+                </div>
 
             </div>
 
