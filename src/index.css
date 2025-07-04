@@ -23,21 +23,21 @@ html.dark {
 @layer utilities {
 
   .bg-body{
-    background-color: rbg(var(--color-bg));
+    background-color: rgb(var(--color-bg));
   }
   .bg-box-bg{
-    background-color: rbg(var(--color-box));
+    background-color: rgb(var(--color-box));
   }
   .text-heading-1{
-    color: rbg(var(--heading-1));
+    color: rgb(var(--heading-1));
     
   }
   .text-heading-2{
-    color: rbg(var(--heading-2));
+    color: rgb(var(--heading-2));
     
   }
   .text-heading-3{
-    color: rbg(var(--heading-3));
+    color: rgb(var(--heading-3));
     
   }
 
