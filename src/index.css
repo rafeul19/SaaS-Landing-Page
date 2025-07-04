@@ -19,3 +19,36 @@ html.dark {
   --heading-2: 243 244 246;
   --heading-3: 209 213 219;
 }
+
+@layer utilities {
+
+  .bg-body{
+    background-color: rbg(var(--color-bg));
+  }
+  .bg-box-bg{
+    background-color: rbg(var(--color-box));
+  }
+  .text-heading-1{
+    color: rbg(var(--heading-1));
+    
+  }
+  .text-heading-2{
+    color: rbg(var(--heading-2));
+    
+  }
+  .text-heading-3{
+    color: rbg(var(--heading-3));
+    
+  }
+
+
+}
+
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: "Raleway", sans-serif ;
+}
