@@ -1,141 +1,183 @@
- 
+# AI SaaS Landing Page Tutorial
 
+<div align="center">
+  <br />
+  <a href="" target="_blank">
+    <img src="./banner.png" alt="Project Banner">
+  </a>
+  <br />
+  <div>
+    <img src="https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+    <img src="https://img.shields.io/badge/-TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+    <img src="https://img.shields.io/badge/-TypeScript-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/-Zustand-000?style=for-the-badge" alt="Zustand" />
+  </div>
+  <h3 align="center">Build a Beautiful, Modern Landing Page for Your AI SaaS</h3>
+  <div align="center">
+    Follow along with our detailed tutorial on 
+    <a href="https://youtu.be/qeCBBxZoqAM" target="_blank"><b>YouTube</b></a>
+  </div>
+  <br />
+</div>
 
-```
-# NekkoBOT SaaS Landing Page
+## 📋 Table of Contents
 
-![NekkoBOT Logo](./public/assets/ChatBOT.png)
-
----
+1. [Introduction](#introduction)
+2. [Tech Stack](#tech-stack)
+3. [Features](#features)
+4. [Quick Start](#quick-start)
+5. [Code Snippets](#code-snippets)
+6. [Assets & More](#assets--more)
 
 ## 🚀 Introduction
 
-Welcome to **NekkoBOT**, a modern SaaS landing page designed to showcase your AI-powered solutions and drive conversions. This project leverages the latest web technologies to deliver a fast, responsive, and visually appealing experience for your users.
+In this video tutorial, you'll learn how to build a beautiful, modern landing page tailored for your AI SaaS company. This project uses React, Vite, Tailwind CSS, and Zustand to deliver a sleek, responsive website designed to showcase your product and convert visitors into customers.
 
----
+Watch the full tutorial on [YouTube](https://youtu.be/qeCBBxZoqAM).
 
-## 🛠️ Tech Stack
+## ⚙️ Tech Stack
 
-| Technology      | Logo                                                                 | Emoji  |
-|-----------------|----------------------------------------------------------------------|--------|
-| [React](https://react.dev/)           | <img src="https://raw.githubusercontent.com/github/explore/main/topics/react/react.png" width="32"/> | ⚛️     |
-| [Vite](https://vitejs.dev/)           | <img src="https://vitejs.dev/logo.svg" width="32"/>                                   | ⚡     |
-| [TypeScript](https://www.typescriptlang.org/) | <img src="https://raw.githubusercontent.com/github/explore/main/topics/typescript/typescript.png" width="32"/> | 🟦     |
-| [TailwindCSS](https://tailwindcss.com/) | <img src="https://raw.githubusercontent.com/github/explore/main/topics/tailwindcss/tailwindcss.png" width="32"/> | 💨     |
-| [Lucide Icons](https://lucide.dev/)   | <img src="https://lucide.dev/logo.svg" width="32"/>                                   | 🖼️     |
-| [Zustand](https://zustand-demo.pmnd.rs/) | <img src="https://avatars.githubusercontent.com/u/37719699?s=200&v=4" width="32"/>    | 🐻     |
-| [ESLint](https://eslint.org/)         | <img src="https://raw.githubusercontent.com/github/explore/main/topics/eslint/eslint.png" width="32"/> | 🧹     |
+- **React** – For building the user interface
+- **Vite** – For fast development and optimized builds
+- **Tailwind CSS** – For rapid, responsive styling using a design token system
+- **TypeScript** – For type safety and modern JavaScript features
+- **Zustand** – For lightweight state management and theme persistence
 
----
+## ⚡️ Features
 
-## ✨ Features
+- **Modern Landing Page Design:**  
+  A sleek, responsive design that highlights your AI SaaS product’s unique value proposition.
 
-- **Modern Responsive Design**: Looks great on all devices.
-- **Next-Gen Intelligent Workflows**: Boost productivity by streamlining routine operations.
-- **Immediate Performance Metrics**: Make smarter decisions with live, actionable intelligence.
-- **Intelligent Trend Prediction**: Identify opportunities and prevent issues before they arise.
-- **Dark/Light Theme Toggle**: Seamless theme switching for user comfort.
-- **Reusable Components**: Built with modularity and scalability in mind.
-- **Easy Customization**: Update content, colors, and assets with minimal effort.
+- **Dark/Light Mode:**  
+  Seamlessly toggle between dark and light themes with Zustand and Tailwind CSS design tokens.
 
----
+- **Interactive Components:**  
+  Build reusable sections such as Hero, Features, Pricing, and CTA using React components.
 
-## ⚡ Quick Start
+- **Animated Elements:**  
+  Smooth hover animations and gradient effects for a dynamic user experience.
 
-### 1. Clone the Repository
+- **State Management:**  
+  Global UI state management with Zustand ensures persistent theme settings across sessions.
+
+## 👌 Quick Start
+
+### Prerequisites
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en/)
+- [npm](https://www.npmjs.com/)
+
+### Cloning the Repository
 
 ```bash
-git clone https://github.com/your-username/nekko-bot-landing-page.git
-cd nekko-bot-landing-page
+git clone https://github.com/yourusername/ai-saas-landing-page.git
+cd ai-saas-landing-page
 ```
 
-### 2. Install Dependencies
+### Installing Dependencies
 
 ```bash
 npm install
-# or
-yarn install
 ```
 
-### 3. Run the Development Server
+### Running the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Visit [http://localhost:5173](http://localhost:5173) to view the landing page.
+Your site will be running at [http://localhost:3000](http://localhost:3000).
 
-### 4. Build for Production
+## 💻 Code Snippets
 
-```bash
-npm run build
-# or
-yarn build
+### Theme Store (using Zustand and persist)
+
+```tsx
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+
+interface ThemeStore {
+  theme: "light" | "dark";
+  toggleTheme: () => void;
+  setTheme: (theme: "light" | "dark") => void;
+}
+
+const useThemeStore = create<ThemeStore>()(
+  persist(
+    (set, get) => ({
+      theme:
+        typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light",
+      toggleTheme: () => {
+        const newTheme = get().theme === "light" ? "dark" : "light";
+        if (typeof document !== "undefined") {
+          document.documentElement.classList.toggle("dark", newTheme === "dark");
+        }
+        set({ theme: newTheme });
+      },
+      setTheme: (theme: "light" | "dark") => {
+        if (typeof document !== "undefined") {
+          document.documentElement.classList.toggle("dark", theme === "dark");
+        }
+        set({ theme });
+      },
+    }),
+    {
+      name: "app-theme",
+      onRehydrateStorage: () => (state) => {
+        if (state?.theme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      },
+    }
+  )
+);
+
+export default useThemeStore;
 ```
 
----
+### Custom Button Component with Animation
 
-## 🖼️ Assets
+```tsx
+import React from "react";
 
-- **Logo:** `public/assets/ChatBOT.png`
-- **Hero Images:** `public/assets/Hero_img/`
-- **SVG Icons:** Inline SVGs in `/src/utils/services-data.tsx` and via Lucide Icons.
+interface ButtonProps {
+  className?: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+}
 
----
-
-## 📁 Project Structure
-
-```
-├── public/
-│   └── assets/
-├── src/
-│   ├── components/
-│   │   ├── elements/
-│   │   ├── sections/
-│   │   ├── shared/
-│   │   └── cards/
-│   ├── store/
-│   ├── utils/
-│   │   └── services-data.tsx
-│   ├── App.tsx
-│   └── main.tsx
-├── package.json
-├── tailwind.config.js
-└── README.md
+export const Button: React.FC<ButtonProps> = ({ onClick, children, className = "" }) => {
+  return (
+    <button
+      onClick={onClick}
+      className={`px-6 py-3 rounded-full outline-none cursor-pointer relative overflow-hidden border border-transparent bg-violet-600 text-white transform transition duration-300 hover:scale-105 ${className}`}
+    >
+      {children}
+    </button>
+  );
+};
 ```
 
----
+## 🎨 Assets & More
 
-## 📚 More
+- **Images:**  
+  Use high-quality images from [Unsplash](https://unsplash.com/) or [Pexels](https://www.pexels.com/) to showcase your product.
 
-- **Customization:**  
-  Update the content in `/src/utils/services-data.tsx` to change the services and icons.
-- **Theming:**  
-  Theme switching is managed via Zustand in `/src/store/ThemeStore.ts`.
-- **Deployment:**  
-  Easily deploy to Vercel, Netlify, or any static hosting provider.
+- **SVG Icons:**  
+  Import SVG icons using packages like [vite-plugin-svgr](https://github.com/pd4d10/vite-plugin-svgr) or directly reference them as React components.
 
----
-
-## 🤝 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+- **Design Tokens:**  
+  The design tokens for colors, shadows, and typography are defined in the global CSS file using the `@theme` directive, ensuring consistent dark/light mode styling.
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-## 💬 Contact
-
-For questions or support, open an issue or contact [your-email@example.com](mailto:your-email@example.com).
-
-```
+Feel free to customize this README to suit your project's needs. Happy coding and enjoy building your modern AI SaaS
 
 
 
