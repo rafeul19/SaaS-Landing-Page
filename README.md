@@ -14,10 +14,7 @@
     <img src="https://img.shields.io/badge/-Zustand-000?style=for-the-badge" alt="Zustand" />
   </div>
   <h3 align="center">Build a Beautiful, Modern Landing Page for Your AI SaaS</h3>
-  <div align="center">
-    Follow along with our detailed tutorial on 
-    <a href="https://youtu.be/qeCBBxZoqAM" target="_blank"><b>YouTube</b></a>
-  </div>
+
   <br />
 </div>
 
@@ -89,80 +86,6 @@ npm run dev
 ```
 
 Your site will be running at [http://localhost:3000](http://localhost:3000).
-
-## 💻 Code Snippets
-
-### Theme Store (using Zustand and persist)
-
-```tsx
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
-
-interface ThemeStore {
-  theme: "light" | "dark";
-  toggleTheme: () => void;
-  setTheme: (theme: "light" | "dark") => void;
-}
-
-const useThemeStore = create<ThemeStore>()(
-  persist(
-    (set, get) => ({
-      theme:
-        typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light",
-      toggleTheme: () => {
-        const newTheme = get().theme === "light" ? "dark" : "light";
-        if (typeof document !== "undefined") {
-          document.documentElement.classList.toggle("dark", newTheme === "dark");
-        }
-        set({ theme: newTheme });
-      },
-      setTheme: (theme: "light" | "dark") => {
-        if (typeof document !== "undefined") {
-          document.documentElement.classList.toggle("dark", theme === "dark");
-        }
-        set({ theme });
-      },
-    }),
-    {
-      name: "app-theme",
-      onRehydrateStorage: () => (state) => {
-        if (state?.theme === "dark") {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-      },
-    }
-  )
-);
-
-export default useThemeStore;
-```
-
-### Custom Button Component with Animation
-
-```tsx
-import React from "react";
-
-interface ButtonProps {
-  className?: string;
-  children: React.ReactNode;
-  onClick?: () => void;
-}
-
-export const Button: React.FC<ButtonProps> = ({ onClick, children, className = "" }) => {
-  return (
-    <button
-      onClick={onClick}
-      className={`px-6 py-3 rounded-full outline-none cursor-pointer relative overflow-hidden border border-transparent bg-violet-600 text-white transform transition duration-300 hover:scale-105 ${className}`}
-    >
-      {children}
-    </button>
-  );
-};
-```
 
 ## 🎨 Assets & More
 
