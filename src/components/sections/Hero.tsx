@@ -2,7 +2,7 @@ import { Button } from "../shared/Button";
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 import { Numbers } from "./Numbers";
-import heroimg from "../../../public/assets/Hero_img/Main Image.jpg";
+
 
 export const Hero = () => {
   return (
@@ -74,7 +74,7 @@ export const Hero = () => {
 
         <div className="flex flex-1 lg:w-1/2 lg:h-auto relative lg:max-w-non lg:mx-0 mx-auto max-w-3xl">
           <img
-            src={heroimg}
+            src="/assets/Hero_img/Main Image.jpg"
             alt="Hero image"
             width={2350}
             height={2359}

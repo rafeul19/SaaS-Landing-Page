@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme{
+@theme {
   --color-bg: 255 255 255;
   --color-box: 255 255 255;
   --box-border: 229 231 235;
@@ -10,7 +10,7 @@
   --heading-3: 55 65 81;
 }
 
-html.dark {
+.dark {
   --color-bg: 3 7 18;
   --color-box: 17 24 39;
   --box-border: 243 244 246 / 0.1;
@@ -21,34 +21,27 @@ html.dark {
 }
 
 @layer utilities {
-
-  .bg-body{
+  .bg-body {
     background-color: rgb(var(--color-bg));
   }
-  .bg-box-bg{
+  .bg-box-bg {
     background-color: rgb(var(--color-box));
   }
-  .text-heading-1{
+  .text-heading-1 {
     color: rgb(var(--heading-1));
-    
   }
-  .text-heading-2{
+  .text-heading-2 {
     color: rgb(var(--heading-2));
-    
   }
-  .text-heading-3{
+  .text-heading-3 {
     color: rgb(var(--heading-3));
-    
   }
-
-
 }
 
-
-html{
+html {
   scroll-behavior: smooth;
 }
 
-body{
-  font-family: "Raleway", sans-serif ;
+body {
+  font-family: "Raleway", sans-serif;
 }
