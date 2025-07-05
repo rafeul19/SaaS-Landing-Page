@@ -29,9 +29,8 @@
 
 ## 🚀 Introduction
 
-In this video tutorial, you'll learn how to build a beautiful, modern landing page tailored for your AI SaaS company. This project uses React, Vite, Tailwind CSS, and Zustand to deliver a sleek, responsive website designed to showcase your product and convert visitors into customers.
+Modern landing page tailored for your AI SaaS company. This project uses React, Vite, Tailwind CSS, and Zustand to deliver a sleek, responsive website designed to showcase your product and convert visitors into customers.
 
-Watch the full tutorial on [YouTube](https://youtu.be/qeCBBxZoqAM).
 
 ## ⚙️ Tech Stack
 
@@ -86,17 +85,6 @@ npm run dev
 ```
 
 Your site will be running at [http://localhost:3000](http://localhost:3000).
-
-## 🎨 Assets & More
-
-- **Images:**  
-  Use high-quality images from [Unsplash](https://unsplash.com/) or [Pexels](https://www.pexels.com/) to showcase your product.
-
-- **SVG Icons:**  
-  Import SVG icons using packages like [vite-plugin-svgr](https://github.com/pd4d10/vite-plugin-svgr) or directly reference them as React components.
-
-- **Design Tokens:**  
-  The design tokens for colors, shadows, and typography are defined in the global CSS file using the `@theme` directive, ensuring consistent dark/light mode styling.
 
 ---
 
