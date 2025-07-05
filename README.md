@@ -24,8 +24,7 @@
 2. [Tech Stack](#tech-stack)
 3. [Features](#features)
 4. [Quick Start](#quick-start)
-5. [Code Snippets](#code-snippets)
-6. [Assets & More](#assets--more)
+
 
 ## 🚀 Introduction
 
