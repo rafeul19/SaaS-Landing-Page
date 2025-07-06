@@ -1,5 +1,5 @@
 import { Container } from "../shared/Container";
-import logo from "/assets/icon.svg";
+import logo from "/assets/ChatBOT.png";
 import { navItems } from "./Navbar";
 import { motion } from "framer-motion";
 
@@ -48,7 +48,7 @@ export const Footer = () => {
           {/* Logo and Brand */}
           <div className="flex items-center gap-3 mb-4 md:mb-0">
             <img src={logo} className="w-8 h-8" alt="NekkoBOT Logo" />
-            <span className="text-xl font-bold text-heading-1">NekkoBOT</span>
+            <span className="text-xl font-bold text-heading-1" style={{ fontFamily: "'Fascinate', cursive" }}>NekkoBOT</span>
           </div>
 
           {/* Animated Nav Links */}
@@ -68,7 +68,7 @@ export const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex gap-4">
-            {socialLinks.map((s, i) => (
+            {socialLinks.map((s) => (
               <motion.a
                 key={s.icon}
                 href={s.href}

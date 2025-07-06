@@ -1,4 +1,3 @@
-import { Button } from "../shared/Button";
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 import { Numbers } from "./Numbers";
@@ -83,14 +82,18 @@ export const Hero = () => {
                 >
                   <motion.span
                     className="relative z-[5] font-bold text-lg"
+                    style={{
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                      color: "transparent",
+                    }}
                     animate={{
                       background: [
                         "linear-gradient(90deg, #fff, #38bdf8, #a78bfa, #fff)",
                         "linear-gradient(90deg, #a78bfa, #38bdf8, #fff, #a78bfa)",
                         "linear-gradient(90deg, #fff, #38bdf8, #a78bfa, #fff)",
                       ],
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
                     }}
                     transition={{
                       repeat: Infinity,

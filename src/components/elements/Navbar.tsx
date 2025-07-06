@@ -1,6 +1,5 @@
 import { Container } from "../shared/Container";
 import logo from "/assets/ChatBOT.png";
-import { BtnLink } from "../shared/BtnLink";
 import { useThemeStore } from "../../store/ThemeStore";
 import { motion } from "framer-motion";
 
@@ -42,6 +41,7 @@ export const Navbar = () => {
               />
               <motion.div
                 className="inline-flex text-lg font-semibold text-heading-1"
+                style={{ fontFamily: "'Fascinate', cursive" }}
                 whileHover={{ color: "#2563eb" }}
                 transition={{ duration: 0.3 }}
               >
