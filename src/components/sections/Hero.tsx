@@ -2,6 +2,7 @@ import { Button } from "../shared/Button";
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 import { Numbers } from "./Numbers";
+import { motion } from "framer-motion";
 
 
 export const Hero = () => {
@@ -64,9 +65,42 @@ export const Hero = () => {
                   placeholder="johndoe@gmail.com"
                   className="w-full py-3 outline-none bg-transparent"
                 />
-                <Button className="min-w-max text-white">
-                  <span className="relative z-[5]">Get Started</span>
-                </Button>
+                <motion.button
+                  type="submit"
+                  className="min-w-max px-7 py-3 rounded-full font-semibold shadow-lg relative overflow-hidden focus:outline-none
+    bg-gradient-to-r from-blue-600 to-violet-600 border-2 border-transparent hover:border-blue-400
+    transition-all duration-200"
+                  whileHover={{
+                    scale: 1.08,
+                    boxShadow: "0 8px 32px 0 rgba(37,99,235,0.25)",
+                    borderColor: "#38bdf8",
+                  }}
+                  whileTap={{
+                    scale: 0.96,
+                    boxShadow: "0 2px 8px 0 rgba(37,99,235,0.15)",
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <motion.span
+                    className="relative z-[5] font-bold text-lg"
+                    animate={{
+                      background: [
+                        "linear-gradient(90deg, #fff, #38bdf8, #a78bfa, #fff)",
+                        "linear-gradient(90deg, #a78bfa, #38bdf8, #fff, #a78bfa)",
+                        "linear-gradient(90deg, #fff, #38bdf8, #a78bfa, #fff)",
+                      ],
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 3,
+                      ease: "linear",
+                    }}
+                  >
+                    Get Started
+                  </motion.span>
+                </motion.button>
               </form>
             </div>
           </div>

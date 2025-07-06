@@ -1,8 +1,8 @@
 import { Container } from "../shared/Container";
 import logo from "/assets/ChatBOT.png";
-import { NavItem } from "../shared/NavItem";
 import { BtnLink } from "../shared/BtnLink";
 import { useThemeStore } from "../../store/ThemeStore";
+import { motion } from "framer-motion";
 
 export const navItems = [
   { href: "#", text: "Home" },
@@ -11,6 +11,12 @@ export const navItems = [
   { href: "#pricing", text: "Pricing" },
 ];
 
+const navItemVariants = {
+  initial: { color: "#64748b" },
+  hover: { color: "#2563eb", scale: 1.08 },
+  tap: { color: "#0ea5e9", scale: 0.96 },
+};
+
 export const Navbar = () => {
   const { toggleTheme, theme } = useThemeStore();
 
@@ -18,15 +24,31 @@ export const Navbar = () => {
     <header className="absolute inset-x-0 top-0 z-50 py-6">
       <Container>
         <nav className="w-full flex justify-between gap-6 relative">
-          {/* Logo */}
-          <div className="min-w-max inline-flex relative">
+          {/* Animated Logo */}
+          <motion.div
+            className="min-w-max inline-flex relative"
+            initial={{ opacity: 0, y: -20, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.7, type: "spring" }}
+            whileHover={{ scale: 1.08, rotate: -3 }}
+          >
             <a href="/" className="relative flex items-center gap-3">
-              <img src={logo} alt="Nekko Logo" className="w-10 h-10" />
-              <div className="inline-flex text-lg font-semibold text-heading-1">
+              <motion.img
+                src={logo}
+                alt="Nekko Logo"
+                className="w-10 h-10 drop-shadow-lg"
+                whileHover={{ rotate: 10, scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              />
+              <motion.div
+                className="inline-flex text-lg font-semibold text-heading-1"
+                whileHover={{ color: "#2563eb" }}
+                transition={{ duration: 0.3 }}
+              >
                 NekkoBOT
-              </div>
+              </motion.div>
             </a>
-          </div>
+          </motion.div>
 
           <div
             className="flex flex-col lg:flex-row w-full lg:justify-between lg:items-center 
@@ -39,16 +61,54 @@ export const Navbar = () => {
                            text-lg text-heading-2 w-full lg:justify-center lg:items-center"
             >
               {navItems.map((item, key) => (
-                <NavItem href={item.href} text={item.text} key={key} />
+                <motion.li
+                  key={key}
+                  variants={navItemVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="relative px-4 py-2 cursor-pointer font-semibold rounded-lg transition-colors duration-300 overflow-hidden"
+                >
+                  <a href={item.href} className="relative z-10">
+                    {item.text}
+                  </a>
+                  {/* Animated underline */}
+                  <motion.span
+                    layoutId="underline"
+                    className="absolute left-0 bottom-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full opacity-0"
+                    whileHover={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.li>
               ))}
             </ul>
-            <div
+            {/* 3D Animated Contact Us Button */}
+            <motion.div
               className="lg:min-w-max flex items-center sm:w-max w-full pb-6 
-                            lg:pb-0 border-b border-box-border lg:border-0
-                            px-6 lg:px-0"
+    lg:pb-0 border-b border-box-border lg:border-0
+    px-6 lg:px-0"
+              initial={{ scale: 0.95, y: 10, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
             >
-              <BtnLink text="Contact US" href="#cta" className="" />
-            </div>
+              <motion.a
+                href="#cta"
+                className="relative flex items-center justify-center w-40 h-12 font-bold text-white bg-gradient-to-br from-blue-600 via-cyan-500 to-blue-400 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-200
+      before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:to-transparent before:rounded-xl before:opacity-0 hover:before:opacity-100 before:transition-opacity"
+                whileHover={{
+                  scale: 1.07,
+                  boxShadow: "0 8px 32px 0 rgba(0, 123, 255, 0.25)",
+                  y: -2,
+                }}
+                whileTap={{
+                  scale: 0.94,
+                  boxShadow: "0 2px 8px 0 rgba(0, 123, 255, 0.15)",
+                  y: 2,
+                }}
+              >
+                <span className="relative z-10 select-none">Contact US</span>
+              </motion.a>
+            </motion.div>
           </div>
 
           <div className="min-w-max flex items-center gap-x-3">
