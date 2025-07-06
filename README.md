@@ -67,8 +67,8 @@ Modern landing page tailored for your AI SaaS company. This project uses React, 
 ### Cloning the Repository
 
 ```bash
-git clone https://github.com/yourusername/ai-saas-landing-page.git
-cd ai-saas-landing-page
+git clone [(https://github.com/rafeul19/SaaS-Landing-Page.git)]
+cd SaaS-Landing-Page
 ```
 
 ### Installing Dependencies
