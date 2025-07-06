@@ -80,29 +80,17 @@ export const Hero = () => {
                   }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  <motion.span
-                    className="relative z-[5] font-bold text-lg"
+                  <span
+                    className="relative z-[5] font-bold text-lg bg-gradient-to-r from-white via-blue-400 to-violet-400 bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient-x"
                     style={{
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                       backgroundClip: "text",
                       color: "transparent",
                     }}
-                    animate={{
-                      background: [
-                        "linear-gradient(90deg, #fff, #38bdf8, #a78bfa, #fff)",
-                        "linear-gradient(90deg, #a78bfa, #38bdf8, #fff, #a78bfa)",
-                        "linear-gradient(90deg, #fff, #38bdf8, #a78bfa, #fff)",
-                      ],
-                    }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 3,
-                      ease: "linear",
-                    }}
                   >
                     Get Started
-                  </motion.span>
+                  </span>
                 </motion.button>
               </form>
             </div>
