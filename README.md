@@ -3,7 +3,7 @@
 <div align="center">
   <br />
   <a href="" target="_blank">
-    <img src="./banner.png" alt="Project Banner">
+    <img src="https://i.imghippo.com/files/F9951NI.png" alt="Project Banner">
   </a>
   <br />
   <div>
@@ -12,6 +12,9 @@
     <img src="https://img.shields.io/badge/-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
     <img src="https://img.shields.io/badge/-TypeScript-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />
     <img src="https://img.shields.io/badge/-Zustand-000?style=for-the-badge" alt="Zustand" />
+    <img src="https://img.shields.io/badge/-Framer%20Motion-000?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
+    <img src="https://img.shields.io/badge/-Lucide-000?style=for-the-badge" alt="Lucide" />
+
   </div>
   <h3 align="center">Build a Beautiful, Modern Landing Page for Your AI SaaS</h3>
 
@@ -38,6 +41,15 @@ Modern landing page tailored for your AI SaaS company. This project uses React, 
 - **Tailwind CSS** – For rapid, responsive styling using a design token system
 - **TypeScript** – For type safety and modern JavaScript features
 - **Zustand** – For lightweight state management and theme persistence
+- **Framer Motion** – For smooth, declarative animations in React components
+- **Lucide Icons** – For beautiful, customizable open-source SVG icons in React
+
+  <a href="" target="_blank">
+    <img src="https://i.imghippo.com/files/w5471tQ.png" alt="Project Banner">
+  </a>
+    <a href="" target="_blank">
+    <img src="https://i.imghippo.com/files/UUHt6665ZhU.png" alt="Project Banner">
+  </a>
 
 ## ⚡️ Features
 
